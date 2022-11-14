@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POO en JavaScript</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    const persona1 = {
+      nombre: 'Iván',
+      edad: 37
+    };
+
+    const coche = {
+      color: "rojo",
+      marca: "Ferrari",
+      modelo: "F40",
+      velocidad: 0,
+      propietario: persona1,
+      acelerar: function () {
+        this.velocidad += 10;
+      },
+      frenar: function () {
+        this.velocidad -= 10;
+      },
+    };
+
+    const miArray = new Array();
+
+    const moto = Object.create( { color: 'negro', caballos: 200 } );
+    coche.pasajeros = 5;
+
+    document.write( coche.pasajeros );
+    document.write( '<br>' );
+    document.write( coche.propietario.nombre );
+
+
+
+  </script>
+</body>
+
+</html>
