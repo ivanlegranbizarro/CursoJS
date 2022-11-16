@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -12,24 +12,51 @@
 
 
   <script type="module">
-    import { calculoIva } from './calculosFinancieros.js';
-    let coste = 15000;
+    import { calculoIva, calculoIRPF } from './calculosFinancieros.js';
 
-    const iva = calculoIva( coste );
 
-    console.log( `El IVA de ${ coste } es ${ iva }` );
-    console.log( `El precio final es ${ coste + iva }` );
 
     let contenedor = document.getElementById( 'contenedor' );
-    contenedor.innerHTML = `<p>El IVA de ${ coste } es ${ iva }</p>
-                            <p>El precio final es ${ coste + iva }</p>`;
+    let origen = document.getElementById( 'origen' );
+    let conversorBtn = document.getElementById( 'conversor' );
+
+    conversorBtn.addEventListener( 'click', () => {
+      let valor = parseFloat( origen.value );
+      let resultado = ` ${ valor } € son ${ calculoIva( valor ) + valor } € con IVA incluido`;
+      contenedor.innerHTML = resultado;
+    } );
+
+    let introIRPF = document.getElementById( 'introIRPF' );
+    let irpfBtn = document.getElementById( 'calculoIRPF' );
+    let contenedorIrpf = document.getElementById( 'contenedorIRPF' );
+
+    irpfBtn.addEventListener( 'click', () => {
+      let valor = parseFloat( introIRPF.value );
+      let resultadoIRPF = ` ${ valor } € son ${ calculoIRPF( valor ) + valor } € con IRPF incluido`;
+      contenedorIrpf.innerHTML = resultadoIRPF;
+    } )
+
 
   </script>
+  <h2>Cálculo del IVA</h2>
+  <input type="text" name="" id="origen" />
+  <br />
+  <br />
+  <button id="conversor" type="submit">Calcular</button>
 
-  <div id="contenedor">
+  <div id="contenedor"></div>
+  <br />
+  <hr />
+  <br />
+  <h2>Cálculo del IRPF</h2>
+  <input type="text" name="" id="introIRPF" />
+  <br />
+  <br />
+  <button id="calculoIRPF" type="submit">Calcular</button>
+
+  <div id="contenedorIRPF"></div>
 
 
-  </div>
 </body>
 
 </html>

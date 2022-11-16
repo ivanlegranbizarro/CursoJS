@@ -73,3 +73,5 @@ if ( nombres.some( encontrar => encontrar.charAt( 0 ) == 'A' ) ) {
 } else {
   console.log( 'No hay nombres que empiecen con A' );
 }
+
+
