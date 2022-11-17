@@ -29,8 +29,13 @@ empleado2.set( 'Nombre', 'Alfonso' );
 console.log( empleado2 );
 
 
-// Iterar un map
+// Iterar un map con forEach
 
 empleado.forEach( ( valor, clave ) => {
   console.log( clave, valor );
 } );
+
+
+for ( let datos of empleado.entries() ) {
+  console.log( datos );
+}
