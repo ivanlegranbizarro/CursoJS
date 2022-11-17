@@ -27,3 +27,10 @@ const empleado2 = new Map( empleado );
 empleado2.set( 'Nombre', 'Alfonso' );
 
 console.log( empleado2 );
+
+
+// Iterar un map
+
+empleado.forEach( ( valor, clave ) => {
+  console.log( clave, valor );
+} );
